@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="framework/bootstrap.min.css ">
+    <title>Tugas Pertemuan 14</title>
+    <style>
+        .kotak{height: 100px;margin: 20px;}
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Belajar jQuery Show Hide Efect</h1>
+        <button id="TPilih1" type="button" class="btn btn-primary">pilih 1</button>
+        <button id="TPilih2" type="button" class="btn btn-primary">pilih 2</button>
+        <select id="spilih">
+            <option>pilihan</option>
+            <option value="A">pilih 1</option>
+            <option value="B">pilih 2</option>
+        </select>
+    </div>
+
+    <div class="container">
+
+        <div class="pilih 1">
+            <div class="card">
+                <div class="card-content kotak">
+                    <h1>Hitung Luas dan Keliling Persegi Panjang</h1>
+                    <form>
+                        <label for="pj">Nilai Panjang</label>
+                        <input type="number" id="pj" class="form-control">
+                        <label for="lb">Nilai Lebar</label>
+                        <input type="number" id="lb" class="form-control">
+                        <label for="luas">Luas</label>
+                        <input type="number" id="luas" class="form-control" disable>
+                        <label for="Keliling">Keliling</label>
+                        <input type="keliling" id="KLL" class="form-control" disable>
+                        <br>
+                        <button type="button" id="HPP">Hitung Luas dan Keliling</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="pilih 1">
+            <div class="card">
+                <div class="card-content kotak">
+                    isi dari pilih 2
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="framework/jQuery/js/jQuery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".pilih1").hide();
+        $(".pilih2").hide();
+
+        $("#TPilih1").click(function(){
+            $(".pilih1").show(1000);
+            $(".pilih2").hide(500);
+            
+        });
+
+        $("#TPilih2").click(function(){
+            $(".pilih2").show(1000);
+            $(".pilih2").hide(500);
+        });
+        
+        $("sTPilih2").click(function(){
+            $(".pilih2").show(1000);
+            $(".pilih2").hide(500);
+        });
+
+        $("#spilih").change(function(){
+            var npilih =$("#spilih").val();
+            switch (npilih) {
+            case "A":
+            $(".pilih1").show(1000); 
+            $(".pilih2").hide(500);
+            break;  
+            case "B":
+            $(".pilih2").show(1000); 
+            $(".pilih1").hide(500);
+            break; 
+            default:  
+            $(".pilih1").hide(1000); 
+            $(".pilih2").hide(1000);
+            break;
+            }
+        });
+        
+        $("#HPP").click(function(){
+            var pj = $("#pj").val();
+            var lb = $("#LB").val();
+            var luas = pj*lb;
+            $("#LUAS").val(luas);
+            var kll = 2*(pj+lb);
+            $("#KLL").val(kll);
+        });
+
+     });
+</script>
+</html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Con
